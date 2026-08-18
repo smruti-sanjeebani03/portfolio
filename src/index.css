@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #FFF8F8;
+    color: #493743;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, .font-serif-display {
+    font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-handwriting {
+    font-family: 'Caveat', cursive;
+  }
+  
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  }
+}
+
+/* Pink scrapbook stationery textures */
+.bg-pink-dots {
+  background-image: radial-gradient(#F8D7E2 1.2px, transparent 1.2px);
+  background-size: 20px 20px;
+}
+
+.bg-pink-grid {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(239, 179, 200, 0.18) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(239, 179, 200, 0.18) 1px, transparent 1px);
+}
+
+.bg-notebook-lines {
+  background-size: 100% 28px;
+  background-image: linear-gradient(to bottom, transparent 27px, #FCE8EE 28px);
+}
+
+/* Washi tape & scrapbook tape accents */
+.washi-tape-pink {
+  background: rgba(254, 230, 238, 0.85);
+  backdrop-filter: blur(2px);
+  border: 1px dashed #EFB3C8;
+  box-shadow: 0 1px 3px rgba(73, 55, 67, 0.05);
+}
+
+.washi-tape-lavender {
+  background: rgba(238, 232, 248, 0.85);
+  backdrop-filter: blur(2px);
+  border: 1px dashed #C9B8DE;
+  box-shadow: 0 1px 3px rgba(73, 55, 67, 0.05);
+}
+
+/* Pixel art rendering helper */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Custom soft pink scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF1F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F8D7E2;
+  border-radius: 9999px;
+  border: 2px solid #FFF8F8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #EFB3C8;
+}
+
+/* Print Styles for Printable Resume / PDF Generation */
+@media print {
+  body {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+  }
+
+  /* Hide background elements and navigation when printing */
+  nav, footer, #hero, #about, #currently, #skills, #projects, #journey, #contact, .no-print {
+    display: none !important;
+  }
+
+  /* Show resume full page */
+  #printable-resume-container {
+    position: static !important;
+    inset: auto !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    max-height: none !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  #printable-resume-card {
+    border: none !important;
+    box-shadow: none !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #printable-resume-content {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    color: #000000 !important;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: #000000 !important;
+  }
+}
